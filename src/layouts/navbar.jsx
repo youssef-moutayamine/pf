@@ -31,7 +31,7 @@ const Navbar = () => {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 md:h-24 items-center justify-between">
           <Link to="/" className="flex items-center gap-3 ">
-            <img src={theme === "dark" ? Constants.Images.Logo : Constants.Images.Light} alt="logo" className="h-12 w-12 md:h-14 md:w-14" />
+            <img src={theme === "dark" ? Constants.Images.Logo : Constants.Images.Light} alt="logo" className={`transition-all duration-300 ${scrolled ? 'h-14 w-14 md:h-16 md:w-16' : 'h-16 w-16 md:h-20 md:w-20'}`} />
           </Link>
 
 
