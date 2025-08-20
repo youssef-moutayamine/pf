@@ -4,6 +4,9 @@
   color-scheme: dark;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 /* Custom animations */
 @keyframes caretPulse {
   0%, 100% { opacity: 1; }
