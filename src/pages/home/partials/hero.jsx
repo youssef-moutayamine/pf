@@ -28,7 +28,12 @@ const HeroSection = () => {
         <section id="home" className="relative isolate pt-36 md:pt-44 lg:pt-52 bg-white dark:bg-black">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-16 items-center">
-                    <div className="bg-neutral-900 dark:bg-neutral-800 rounded-lg p-6 font-mono text-sm overflow-x-auto">
+                    <div 
+                        data-aos="fade-right" 
+                        data-aos-duration="1000" 
+                        data-aos-delay="200"
+                        className="bg-neutral-900 dark:bg-neutral-800 rounded-lg p-6 font-mono text-sm overflow-x-auto"
+                    >
                         <div className="text-green-400">const</div>
                         <div className="text-blue-400">coder</div>
                         <div className="text-white">= {'{'}</div>
@@ -57,36 +62,100 @@ const HeroSection = () => {
                         <div className="text-white">{'}'}</div>
                     </div>
 
-                    <div className="text-left">
-                        <p className="text-2xl md:text-3xl font-semibold text-neutral-700 dark:text-neutral-300">Hi, I'm <span className="text-neutral-900 dark:text-neutral-100 font-extrabold" style={{ fontFamily: 'var(--font-display)' }}>Youssef Moutayamine</span></p>
-                        <h1 className="mt-4 font-black tracking-tight text-neutral-900 dark:text-neutral-100" style={{ fontFamily: 'var(--font-display)' }}>
+                    <div 
+                        data-aos="fade-left" 
+                        data-aos-duration="1000" 
+                        data-aos-delay="400"
+                        className="text-left"
+                    >
+                        <p 
+                            data-aos="fade-up" 
+                            data-aos-duration="800" 
+                            data-aos-delay="600"
+                            className="text-2xl md:text-3xl font-semibold text-neutral-700 dark:text-neutral-300"
+                        >
+                            Hi, I'm <span className="text-neutral-900 dark:text-neutral-100 font-extrabold" style={{ fontFamily: 'var(--font-display)' }}>Youssef Moutayamine</span>
+                        </p>
+                        <h1 
+                            data-aos="fade-up" 
+                            data-aos-duration="800" 
+                            data-aos-delay="800"
+                            className="mt-4 font-black tracking-tight text-neutral-900 dark:text-neutral-100" 
+                            style={{ fontFamily: 'var(--font-display)' }}
+                        >
                             <span className="block text-5xl md:text-7xl lg:text-8xl leading-[1.05]">Fullstack Web <span className="text-red-500">Developer</span></span>
                         </h1>
-                        <div className="relative inline-flex mt-2">
+                        <div 
+                            data-aos="fade-up" 
+                            data-aos-duration="800" 
+                            data-aos-delay="1000"
+                            className="relative inline-flex mt-2"
+                        >
                             <span className="w-0.5 md:w-1 bg-red-500 animate-caret" />
                         </div>
 
-                        <p className="mt-6 max-w-2xl text-base md:text-lg lg:text-xl leading-7 text-neutral-600 dark:text-neutral-300">I build fast, accessible web apps end‑to‑end — from polished frontends to robust backends.</p>
+                        <p 
+                            data-aos="fade-up" 
+                            data-aos-duration="800" 
+                            data-aos-delay="1200"
+                            className="mt-6 max-w-2xl text-base md:text-lg lg:text-xl leading-7 text-neutral-600 dark:text-neutral-300"
+                        >
+                            I build fast, accessible web apps end‑to‑end — from polished frontends to robust backends.
+                        </p>
 
-                        <div className="mt-6 flex items-center gap-3">
-                            {socialLinks.map(s => (
-                                <a key={s.label} href={s.href} aria-label={s.label} className="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-red-400/50 text-red-500 hover:bg-red-500/10 transition-colors">
+                        <div 
+                            data-aos="fade-up" 
+                            data-aos-duration="800" 
+                            data-aos-delay="1400"
+                            className="mt-6 flex items-center gap-3"
+                        >
+                            {socialLinks.map((s, index) => (
+                                <a 
+                                    key={s.label} 
+                                    href={s.href} 
+                                    aria-label={s.label} 
+                                    data-aos="zoom-in" 
+                                    data-aos-duration="600" 
+                                    data-aos-delay={1600 + (index * 100)}
+                                    className="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-red-400/50 text-red-500 hover:bg-red-500/10 transition-colors hover:scale-110 transform duration-200"
+                                >
                                     {s.icon}
                                 </a>
                             ))}
                         </div>
 
-                        <div className="mt-8">
-                            <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-red-400/60 px-6 py-3 text-sm font-medium text-red-600 dark:text-red-300 hover:bg-red-500/10 transition-colors">Hire me</a>
+                        <div 
+                            data-aos="fade-up" 
+                            data-aos-duration="800" 
+                            data-aos-delay="1800"
+                            className="mt-8"
+                        >
+                            <a 
+                                href="#contact" 
+                                data-aos="zoom-in" 
+                                data-aos-duration="600" 
+                                data-aos-delay="2000"
+                                className="inline-flex items-center gap-2 rounded-full border border-red-400/60 px-6 py-3 text-sm font-medium text-red-600 dark:text-red-300 hover:bg-red-500/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                            >
+                                Hire me
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="relative mt-16 md:mt-20 lg:mt-24 flex flex-col items-center" onClick={() => {
-                const next = document.querySelector('#about');
-                if (next) next.scrollIntoView({ behavior: 'smooth' });
-            }} style={{ cursor: 'pointer' }}>
+            <div 
+                data-aos="fade-in" 
+                data-aos-duration="1000" 
+                data-aos-delay="2200"
+                data-aos-easing="ease-out"
+                className="relative mt-16 md:mt-20 lg:mt-24 flex flex-col items-center" 
+                onClick={() => {
+                    const next = document.querySelector('#about');
+                    if (next) next.scrollIntoView({ behavior: 'smooth' });
+                }} 
+                style={{ cursor: 'pointer' }}
+            >
                 <div className="mouse-shell theme-red">
                     <span className="mouse-wheel" />
                 </div>

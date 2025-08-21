@@ -10,7 +10,14 @@ darkMode: ['selector', '[data-theme="dark"]'],
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        heading: ['Jost', 'Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['Open Sans', 'Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        accent: ['Oswald', 'Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

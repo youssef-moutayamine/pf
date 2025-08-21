@@ -67,42 +67,77 @@ const AboutSection = () => {
             className="py-24 bg-white dark:bg-black"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                {/* Section Header with AOS animation */}
+                <div 
+                    data-aos="fade-down" 
+                    data-aos-duration="800" 
+                    data-aos-delay="200"
+                    className="text-center mb-16"
+                >
                     <h2 
                         ref={titleRef}
                         className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-4"
                     >
                         About
                     </h2>
-                    <div className="w-24 h-1 bg-red-500 mx-auto"></div>
+                    <div 
+                        data-aos="zoom-in" 
+                        data-aos-duration="600" 
+                        data-aos-delay="400"
+                        className="w-24 h-1 bg-red-500 mx-auto"
+                    ></div>
                 </div>
 
+                {/* Content with enhanced AOS animations */}
                 <div 
                     ref={contentRef}
                     className="max-w-4xl mx-auto text-center"
                 >
-                    <ScrollReveal
-                        baseOpacity={0}
-                        enableBlur={true}
-                        baseRotation={5}
-                        blurStrength={10}
-                        containerClassName="mb-6"
-                        textClassName="text-[clamp(2rem,6vw,4rem)] text-neutral-600 dark:text-neutral-300"
+                    {/* First paragraph with slide-up animation */}
+                    <div 
+                        data-aos="fade-up" 
+                        data-aos-duration="800" 
+                        data-aos-delay="300"
+                        className="mb-6"
                     >
-                        I'm Youssef Moutayamine, a Morocco-based full-stack web developer with a passion for building scalable, high-performance web applications. I specialize in creating responsive, user-friendly digital solutions using modern technologies across both frontend and backend.
-                    </ScrollReveal>
+                        <ScrollReveal
+                            baseOpacity={0}
+                            enableBlur={true}
+                            baseRotation={5}
+                            blurStrength={10}
+                            containerClassName="mb-6"
+                            textClassName="text-[clamp(2rem,6vw,4rem)] text-neutral-600 dark:text-neutral-300"
+                        >
+                            I'm Youssef Moutayamine, a Morocco-based full-stack web developer with a passion for building scalable, high-performance web applications. I specialize in creating responsive, user-friendly digital solutions using modern technologies across both frontend and backend.
+                        </ScrollReveal>
+                    </div>
 
-                    <ScrollReveal
-                        baseOpacity={0}
-                        enableBlur={true}
-                        baseRotation={5}
-                        blurStrength={10}
-                        textClassName="text-[clamp(2rem,6vw,4rem)] text-neutral-600 dark:text-neutral-300"
+                    {/* Second paragraph with slide-up animation */}
+                    <div 
+                        data-aos="fade-up" 
+                        data-aos-duration="800" 
+                        data-aos-delay="500"
+                        className="mb-6"
                     >
-                        Currently enrolled in the full-stack development program at LionsGeek, I'm constantly improving my skills and staying up to date with industry best practices. My approach is focused on clean architecture, performance, and delivering real value through thoughtful design and development.
-                    </ScrollReveal>
+                        <ScrollReveal
+                            baseOpacity={0}
+                            enableBlur={true}
+                            baseRotation={5}
+                            blurStrength={10}
+                            textClassName="text-[clamp(2rem,6vw,4rem)] text-neutral-600 dark:text-neutral-300"
+                        >
+                            Currently enrolled in the full-stack development program at LionsGeek, I'm constantly improving my skills and staying up to date with industry best practices. My approach is focused on clean architecture, performance, and delivering real value through thoughtful design and development.
+                        </ScrollReveal>
+                    </div>
 
-                    <div className="mt-12">
+                    {/* Typing text with fade-in animation */}
+                    <div 
+                        data-aos="fade-in" 
+                        data-aos-duration="1000" 
+                        data-aos-delay="700"
+                        data-aos-easing="ease-out"
+                        className="mt-12"
+                    >
                         <TextType 
                             text={[
                                 "Building the future, one line of code at a time.",

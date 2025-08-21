@@ -86,18 +86,46 @@ const SkillsSection = () => {
   return (
     <section ref={sectionRef} id="skills" className="py-24 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* Section Header with AOS animation */}
+        <div 
+          data-aos="fade-down" 
+          data-aos-duration="800" 
+          data-aos-delay="200"
+          className="text-center mb-16"
+        >
           <h2 ref={titleRef} className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
             Skills
           </h2>
-          <div className="w-24 h-1 bg-red-500 mx-auto"></div>
+          <div 
+            data-aos="zoom-in" 
+            data-aos-duration="600" 
+            data-aos-delay="400"
+            className="w-24 h-1 bg-red-500 mx-auto"
+          ></div>
         </div>
 
-        <div ref={contentRef} className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100 text-center mb-8">
+        {/* Frontend Skills with slide-up animation */}
+        <div 
+          ref={contentRef} 
+          data-aos="fade-up" 
+          data-aos-duration="800" 
+          data-aos-delay="300"
+          className="mb-16"
+        >
+          <h3 
+            data-aos="fade-up" 
+            data-aos-duration="600" 
+            data-aos-delay="400"
+            className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100 text-center mb-8"
+          >
             Frontend Skills
           </h3>
-          <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
+          <div 
+            data-aos="zoom-in" 
+            data-aos-duration="800" 
+            data-aos-delay="500"
+            style={{ height: '200px', position: 'relative', overflow: 'hidden' }}
+          >
             <LogoLoop
               logos={frontendSkills}
               speed={120}
@@ -113,11 +141,26 @@ const SkillsSection = () => {
           </div>
         </div>
 
-        <div>
-          <h3 className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100 text-center mb-8">
-          Backend Skills
+        {/* Backend Skills with slide-up animation */}
+        <div 
+          data-aos="fade-up" 
+          data-aos-duration="800" 
+          data-aos-delay="600"
+        >
+          <h3 
+            data-aos="fade-up" 
+            data-aos-duration="600" 
+            data-aos-delay="700"
+            className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100 text-center mb-8"
+          >
+            Backend Skills
           </h3>
-          <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+          <div 
+            data-aos="zoom-in" 
+            data-aos-duration="800" 
+            data-aos-delay="800"
+            style={{ height: '220px', position: 'relative', overflow: 'hidden' }}
+          >
             <LogoLoop
               logos={backendLogos}
               speed={120}
@@ -133,11 +176,27 @@ const SkillsSection = () => {
           </div>
         </div>
 
-        <div className="mt-16">
-          <h3 className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100 text-center mb-8">
+        {/* Tools & Version Control with staggered animation */}
+        <div 
+          data-aos="fade-up" 
+          data-aos-duration="800" 
+          data-aos-delay="900"
+          className="mt-16"
+        >
+          <h3 
+            data-aos="fade-up" 
+            data-aos-duration="600" 
+            data-aos-delay="1000"
+            className="text-2xl md:text-3xl font-semibold text-neutral-800 dark:text-neutral-100 text-center mb-8"
+          >
             Tools & Version Control
           </h3>
-          <div className="flex items-center justify-center gap-10">
+          <div 
+            data-aos="fade-in" 
+            data-aos-duration="800" 
+            data-aos-delay="1100"
+            className="flex items-center justify-center gap-10"
+          >
             {toolsVersionControl.map((item, idx) => (
               <a
                 key={idx}
@@ -145,7 +204,10 @@ const SkillsSection = () => {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label={item.title}
-                className="inline-flex items-center justify-center rounded-lg p-3 transition-transform duration-300 hover:scale-105"
+                data-aos="zoom-in" 
+                data-aos-duration="600" 
+                data-aos-delay={1200 + (idx * 100)}
+                className="inline-flex items-center justify-center rounded-lg p-3 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-neutral-100 dark:hover:bg-neutral-800"
               >
                 {item.node}
               </a>

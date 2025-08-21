@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://youssef-moutayamine.vercel.app/sitemap.xml
