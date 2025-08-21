@@ -46,3 +46,75 @@
   60% { opacity: 1; transform: translate(-50%, 16px); }
   100% { opacity: 0; transform: translate(-50%, 22px); }
 }
+
+/* Themed scrollbar (WebKit/Blink) */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(139,92,246,0.85), rgba(217,70,239,0.85), rgba(236,72,153,0.85));
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(167,139,250,0.9), rgba(232,121,249,0.9), rgba(244,114,182,0.9));
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139,92,246,0.9) transparent;
+}
+
+.dark html {
+  scrollbar-color: rgba(167,139,250,0.9) transparent;
+}
+
+/* Hide default cursor so the custom one is visible; re-enable on inputs */
+html, body { cursor: none; }
+input, textarea, button, a, [role="button"] { cursor: none; }
+
+/* Welcome page cosmic background */
+.stars {
+  background: #000 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="1" fill="white"/><circle cx="300" cy="200" r="0.5" fill="white"/><circle cx="500" cy="150" r="1" fill="white"/><circle cx="700" cy="300" r="0.5" fill="white"/><circle cx="900" cy="250" r="1" fill="white"/><circle cx="200" cy="400" r="0.5" fill="white"/><circle cx="400" cy="350" r="1" fill="white"/><circle cx="600" cy="500" r="0.5" fill="white"/><circle cx="800" cy="450" r="1" fill="white"/><circle cx="150" cy="600" r="0.5" fill="white"/><circle cx="350" cy="550" r="1" fill="white"/><circle cx="550" cy="700" r="0.5" fill="white"/><circle cx="750" cy="650" r="1" fill="white"/><circle cx="950" cy="750" r="0.5" fill="white"/><circle cx="250" cy="800" r="1" fill="white"/><circle cx="450" cy="750" r="0.5" fill="white"/><circle cx="650" cy="900" r="1" fill="white"/><circle cx="850" cy="850" r="0.5" fill="white"/></svg>') repeat top center;
+  z-index: 0;
+}
+
+.twinkling {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="1" fill="white" opacity="0.3"/><circle cx="300" cy="200" r="0.5" fill="white" opacity="0.5"/><circle cx="500" cy="150" r="1" fill="white" opacity="0.2"/><circle cx="700" cy="300" r="0.5" fill="white" opacity="0.4"/><circle cx="900" cy="250" r="1" fill="white" opacity="0.3"/><circle cx="200" cy="400" r="0.5" fill="white" opacity="0.5"/><circle cx="400" cy="350" r="1" fill="white" opacity="0.2"/><circle cx="600" cy="500" r="0.5" fill="white" opacity="0.4"/><circle cx="800" cy="450" r="1" fill="white" opacity="0.3"/><circle cx="150" cy="600" r="0.5" fill="white" opacity="0.5"/><circle cx="350" cy="550" r="1" fill="white" opacity="0.2"/><circle cx="550" cy="700" r="0.5" fill="white" opacity="0.4"/><circle cx="750" cy="650" r="1" fill="white" opacity="0.3"/><circle cx="950" cy="750" r="0.5" fill="white" opacity="0.5"/><circle cx="250" cy="800" r="1" fill="white" opacity="0.2"/><circle cx="450" cy="750" r="0.5" fill="white" opacity="0.4"/><circle cx="650" cy="900" r="1" fill="white" opacity="0.3"/><circle cx="850" cy="850" r="0.5" fill="white" opacity="0.5"/></svg>') repeat top center;
+  z-index: 1;
+  animation: move-twinkle 200s linear infinite;
+}
+
+.clouds {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M100,200 Q150,150 200,200 T300,200" stroke="rgba(139,92,246,0.1)" stroke-width="2" fill="none"/><path d="M400,300 Q450,250 500,300 T600,300" stroke="rgba(217,70,239,0.1)" stroke-width="2" fill="none"/><path d="M700,400 Q750,350 800,400 T900,400" stroke="rgba(236,72,153,0.1)" stroke-width="2" fill="none"/></svg>') repeat top center;
+  z-index: 2;
+  animation: move-clouds 100s linear infinite;
+}
+
+@keyframes move-twinkle {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+@keyframes move-clouds {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

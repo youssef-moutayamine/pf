@@ -4,19 +4,39 @@ import { Link } from 'react-router-dom'
 import Constants from '../constant'
 
 const navItems = [
-  { label: 'About', href: '/#about' },
-  { label: 'Skills', href: '/#skills' },
-  { label: 'Portfolio', href: '/#portfolio' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'About', href: '/#about', id: 'about' },
+  { label: 'Skills', href: '/#skills', id: 'skills' },
+  { label: 'Portfolio', href: '/#portfolio', id: 'portfolio' },
+  { label: 'Contact', href: '/#contact', id: 'contact' },
 ]
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10)
+      
+      const sections = navItems.map(item => item.id)
+      const scrollPosition = window.scrollY + 100
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const offsetTop = element.offsetTop
+          const offsetHeight = element.offsetHeight
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId)
+            break
+          }
+        }
+      }
+    }
+    
     onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
@@ -38,9 +58,21 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-12">
             {navItems.map(item => (
-              <a key={item.label} href={item.href} className="text-lg md:text-xl font-semibold text-neutral-800 dark:text-neutral-100 hover:text-red-500 dark:hover:text-red-400 transition-colors">
-                {item.label}
-              </a>
+              <div key={item.label} className="relative">
+                <a 
+                  href={item.href} 
+                  className={`text-lg md:text-xl font-semibold transition-colors ${
+                    activeSection === item.id 
+                      ? 'text-red-500 dark:text-red-400' 
+                      : 'text-neutral-800 dark:text-neutral-100 hover:text-red-500 dark:hover:text-red-400'
+                  }`}
+                >
+                  {item.label}
+                </a>
+                {activeSection === item.id && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-red-500 dark:bg-red-400"></div>
+                )}
+              </div>
             ))}
 
             <button
@@ -49,13 +81,11 @@ const Navbar = () => {
               className="rounded-full border border-red-300/40 dark:border-red-400/40 text-red-600 dark:text-red-300 p-3 hover:bg-red-50/50 dark:hover:bg-red-900/20 transition-colors"
             >
               {theme === 'dark' ? (
-                // Sun icon for light mode
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
                   <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 6.34L4.93 4.93M19.07 19.07l-1.41-1.41" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               ) : (
-                // Moon icon for dark mode
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -63,7 +93,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Navigation */}
+
           <div className="md:hidden flex items-center gap-3">
             <button
               onClick={toggleTheme}
@@ -71,20 +101,18 @@ const Navbar = () => {
               className="rounded-full border border-red-300/40 dark:border-red-400/40 text-red-600 dark:text-red-300 p-2.5 hover:bg-red-50/50 dark:hover:bg-red-900/20 transition-colors"
             >
               {theme === 'dark' ? (
-                // Sun icon for light mode
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
                   <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 6.34L4.93 4.93M19.07 19.07l-1.41-1.41" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               ) : (
-                // Moon icon for dark mode
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               )}
             </button>
 
-            {/*  Menu Button */}
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
@@ -101,7 +129,7 @@ const Navbar = () => {
       </nav>
 
       <div className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-        {/* Backdrop */}
+
         <div
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
