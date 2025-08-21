@@ -122,7 +122,7 @@ const ContactSection = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} id="contact" className="py-24 px-6 bg-white dark:bg-black relative overflow-hidden">
+        <section ref={sectionRef} id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 bg-white dark:bg-black relative overflow-hidden">
             <div style={{ width: '100%', height: '600px', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
                 <Particles
                     particleColors={['#ffffff', '#ffffff']}
@@ -136,120 +136,68 @@ const ContactSection = () => {
                 />
             </div>
             <div className="max-w-6xl mx-auto relative z-10">
-                {/* Section Header with AOS animation */}
-                <div 
-                    data-aos="fade-down" 
-                    data-aos-duration="800" 
-                    data-aos-delay="200"
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-8 sm:mb-12 md:mb-16">
                     <h2 
                         ref={headerRef} 
-                        data-aos="fade-up" 
-                        data-aos-duration="600" 
-                        data-aos-delay="300"
-                        className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-4"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-3 sm:mb-4 font-heading"
                     >
                         Let's <span className="text-red-500">Connect</span>
                     </h2>
-                    <p 
-                        data-aos="fade-up" 
-                        data-aos-duration="600" 
-                        data-aos-delay="400"
-                        className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto"
-                    >
+                    <p className="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto font-body px-4">
                         Ready to bring your ideas to life? Let's discuss how we can work together.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    {/* Contact Information with slide-right animation */}
+                <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
                     <div 
                         ref={leftRef} 
-                        data-aos="fade-right" 
-                        data-aos-duration="800" 
-                        data-aos-delay="500"
-                        className="space-y-8"
+                        className="space-y-6 sm:space-y-8"
                     >
-                        <div 
-                            data-aos="zoom-in" 
-                            data-aos-duration="600" 
-                            data-aos-delay="600"
-                            className="bg-neutral-100/80 dark:bg-neutral-900/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-full min-w-0"
-                        >
-                            <h3 
-                                data-aos="fade-up" 
-                                data-aos-duration="600" 
-                                data-aos-delay="700"
-                                className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6"
-                            >
+                        <div className="bg-neutral-100/80 dark:bg-neutral-900/70 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 w-full min-w-0">
+                            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4 sm:mb-6 font-heading">
                                 Get in Touch
                             </h3>
-                            <div className="space-y-6">
-                                {/* Email with staggered animation */}
-                                <div 
-                                    data-aos="fade-up" 
-                                    data-aos-duration="600" 
-                                    data-aos-delay="800"
-                                    className="flex items-start gap-4 group"
-                                >
-                                    <div className="w-12 h-12 shrink-0 aspect-square bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900 transition-colors">
-                                        <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="space-y-4 sm:space-y-6">
+                                <div className="flex items-start gap-3 sm:gap-4 group">
+                                    <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 aspect-square bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900 transition-colors">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                     </div>
-                                    <div>
-                                        <p className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">Email</p>
-                                        <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100 break-all">moutayamineyoussef6@email.com</p>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide font-accent">Email</p>
+                                        <p className="text-sm sm:text-lg font-medium text-neutral-900 dark:text-neutral-100 break-all font-body">moutayamineyoussef6@email.com</p>
                                     </div>
                                 </div>
 
-                                {/* Phone with staggered animation */}
-                                <div 
-                                    data-aos="fade-up" 
-                                    data-aos-duration="600" 
-                                    data-aos-delay="900"
-                                    className="flex items-start gap-4 group"
-                                >
-                                    <div className="w-12 h-12 shrink-0 aspect-square bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900 transition-colors">
-                                        <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="flex items-start gap-3 sm:gap-4 group">
+                                    <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 aspect-square bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900 transition-colors">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                         </svg>
                                     </div>
-                                    <div>
-                                        <p className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">Phone</p>
-                                        <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">+212 621 749-514</p>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide font-accent">Phone</p>
+                                        <p className="text-sm sm:text-lg font-medium text-neutral-900 dark:text-neutral-100 font-body">+212 621 749-514</p>
                                     </div>
                                 </div>
 
-                                {/* Location with staggered animation */}
-                                <div 
-                                    data-aos="fade-up" 
-                                    data-aos-duration="600" 
-                                    data-aos-delay="1000"
-                                    className="flex items-start gap-4 group"
-                                >
-                                    <div className="w-12 h-12 shrink-0 aspect-square bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900 transition-colors">
-                                        <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="flex items-start gap-3 sm:gap-4 group">
+                                    <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 aspect-square bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900 transition-colors">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
                                         </svg>
                                     </div>
-                                    <div>
-                                        <p className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide">Location</p>
-                                        <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Morocco</p>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide font-accent">Location</p>
+                                        <p className="text-sm sm:text-lg font-medium text-neutral-900 dark:text-neutral-100 font-body">Morocco</p>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Social Links with staggered animation */}
-                            <div 
-                                data-aos="fade-up" 
-                                data-aos-duration="600" 
-                                data-aos-delay="1100"
-                                className="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800"
-                            >
-                                <p className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-4">Follow Me</p>
-                                <div className="flex gap-4">
+                            <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-neutral-200 dark:border-neutral-800">
+                                <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wide mb-3 sm:mb-4 font-accent">Follow Me</p>
+                                <div className="flex gap-3 sm:gap-4">
                                     {[
                                         { href: "https://x.com/Youssef_MTN", icon: "M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" },
                                         { href: "https://www.linkedin.com/in/youssef-moutayamine-25594b368?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", icon: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" },
@@ -258,12 +206,9 @@ const ContactSection = () => {
                                         <a 
                                             key={index}
                                             href={social.href} 
-                                            data-aos="zoom-in" 
-                                            data-aos-duration="600" 
-                                            data-aos-delay={1200 + (index * 100)}
-                                            className="w-10 h-10 bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center hover:bg-red-200 dark:hover:bg-red-900 transition-all duration-300 group hover:scale-110 transform"
+                                            className="w-8 h-8 sm:w-10 sm:h-10 bg-red-100 dark:bg-red-900/50 rounded-full flex items-center justify-center hover:bg-red-200 dark:hover:bg-red-900 transition-all duration-300 group hover:scale-110 transform"
                                         >
-                                            <svg className="w-5 h-5 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d={social.icon} />
                                             </svg>
                                         </a>
@@ -273,102 +218,65 @@ const ContactSection = () => {
                         </div>
                     </div>
 
-                    {/* Contact Form with slide-left animation */}
                     <div 
                         ref={rightRef} 
-                        data-aos="fade-left" 
-                        data-aos-duration="800" 
-                        data-aos-delay="700"
-                        className="bg-neutral-50/80 dark:bg-neutral-900/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-neutral-50/80 dark:bg-neutral-900/70 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                     >
-                        <h3 
-                            data-aos="fade-up" 
-                            data-aos-duration="600" 
-                            data-aos-delay="800"
-                            className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6"
-                        >
+                        <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4 sm:mb-6 font-heading">
                             Send Message
                         </h3>
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            {/* Name field with staggered animation */}
-                            <div 
-                                data-aos="fade-up" 
-                                data-aos-duration="600" 
-                                data-aos-delay="900"
-                            >
-                                <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Name</label>
+                        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                            <div>
+                                <label className="block text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 font-accent">Name</label>
                                 <input
                                     type="text"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:border-red-400 focus:ring-2 focus:ring-red-900 focus:outline-none transition-all duration-200 hover:border-red-300"
+                                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:border-red-400 focus:ring-2 focus:ring-red-900 focus:outline-none transition-all duration-200 hover:border-red-300 font-body text-sm sm:text-base"
                                     placeholder="John Doe"
                                 />
                             </div>
 
-                            {/* Email field with staggered animation */}
-                            <div 
-                                data-aos="fade-up" 
-                                data-aos-duration="600" 
-                                data-aos-delay="1000"
-                            >
-                                <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Email</label>
+                            <div>
+                                <label className="block text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 font-accent">Email</label>
                                 <input
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:border-red-400 focus:ring-2 focus:ring-red-900 focus:outline-none transition-all duration-200 hover:border-red-300"
+                                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:border-red-400 focus:ring-2 focus:ring-red-900 focus:outline-none transition-all duration-200 hover:border-red-300 font-body text-sm sm:text-base"
                                     placeholder="john@example.com"
                                 />
                             </div>
 
-                            {/* Message field with staggered animation */}
-                            <div 
-                                data-aos="fade-up" 
-                                data-aos-duration="600" 
-                                data-aos-delay="1100"
-                            >
-                                <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Message</label>
+                            <div>
+                                <label className="block text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 font-accent">Message</label>
                                 <textarea
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     required
                                     rows="4"
-                                    className="w-full px-4 py-3 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:border-red-400 focus:ring-2 focus:ring-red-900 focus:outline-none transition-all duration-200 resize-none hover:border-red-300"
+                                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 focus:border-red-400 focus:ring-2 focus:ring-red-900 focus:outline-none transition-all duration-200 resize-none hover:border-red-300 font-body text-sm sm:text-base"
                                     placeholder="Tell me about your project..."
                                 ></textarea>
                             </div>
 
-                            {/* Submit button with zoom animation */}
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                data-aos="zoom-in" 
-                                data-aos-duration="600" 
-                                data-aos-delay="1200"
-                                className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed font-accent text-sm sm:text-base"
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>
 
-                            {/* Status messages with fade-in animation */}
                             {submitStatus === 'success' && (
-                                <p 
-                                    data-aos="fade-in" 
-                                    data-aos-duration="600"
-                                    className="text-green-600 dark:text-green-400 text-center"
-                                >
+                                <p className="text-green-600 dark:text-green-400 text-center font-body text-sm sm:text-base">
                                     Message sent successfully!
                                 </p>
                             )}
                             {submitStatus === 'error' && (
-                                <p 
-                                    data-aos="fade-in" 
-                                    data-aos-duration="600"
-                                    className="text-red-600 dark:text-red-400 text-center"
-                                >
+                                <p className="text-red-600 dark:text-red-400 text-center font-body text-sm sm:text-base">
                                     Failed to send message. Please try again.
                                 </p>
                             )}
