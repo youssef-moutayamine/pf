@@ -5,8 +5,22 @@ const CustomCursor = () => {
   const ringRef = useRef(null)
   const rafRef = useRef(0)
   const [visible, setVisible] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                            window.innerWidth <= 768
+      setIsMobile(isMobileDevice)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
+    // Don't initialize cursor on mobile devices
+    if (isMobile) return
+
     const dot = dotRef.current
     const ring = ringRef.current
     if (!dot || !ring) return
@@ -42,8 +56,12 @@ const CustomCursor = () => {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('mouseenter', onEnter)
       window.removeEventListener('mouseleave', onLeave)
+      window.removeEventListener('resize', checkMobile)
     }
-  }, [])
+  }, [isMobile])
+
+  // Don't render cursor on mobile devices
+  if (isMobile) return null
 
   return (
     <>

@@ -128,16 +128,16 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+      <div className={`md:hidden fixed inset-0 z-[60] transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
 
         <div
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         ></div>
 
-        <div className={`absolute top-0 right-0 w-80 h-full bg-white dark:bg-black shadow-xl transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-800">
+        <div className={`absolute top-0 right-0 w-80 h-full bg-white dark:bg-neutral-900 shadow-xl transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex flex-col h-full bg-white dark:bg-neutral-900">
+            <div className="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
               <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Menu</h3>
               <button
                 onClick={() => setIsOpen(false)}
@@ -149,14 +149,14 @@ const Navbar = () => {
               </button>
             </div>
 
-            <nav className="flex-1 p-6">
+            <nav className="flex-1 p-6 bg-white dark:bg-neutral-900">
               <ul className="space-y-4">
                 {navItems.map(item => (
                   <li key={item.label}>
                     <a
                       href={item.href}
                       onClick={handleNavClick}
-                      className="block text-lg font-medium text-neutral-800 dark:text-neutral-100 hover:text-red-500 dark:hover:text-red-400 py-3 px-4 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors"
+                      className="block text-lg font-medium text-neutral-800 dark:text-neutral-100 hover:text-red-500 dark:hover:text-red-400 py-3 px-4 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
                     >
                       {item.label}
                     </a>

@@ -87,8 +87,11 @@ html {
 }
 
 /* Hide default cursor so the custom one is visible; re-enable on inputs */
-html, body { cursor: none; }
-input, textarea, button, a, [role="button"] { cursor: none; }
+/* Only apply on desktop devices */
+@media (min-width: 769px) {
+  html, body { cursor: none; }
+  input, textarea, button, a, [role="button"] { cursor: none; }
+}
 
 /* Welcome page cosmic background */
 .stars {
